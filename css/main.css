@@ -14,10 +14,13 @@ body {
 table {
 	--border: 2px;
 	table-layout: fixed;
-	height: 100%;
 	width: 100%;
 	border-spacing: var(--border);
 	background: white;
+}
+
+tr {
+	height: calc((100vh - 16 * var(--border)) / 15);
 }
 
 td {
