@@ -26,9 +26,22 @@
 </head>
 
 <body>
+	<div class="guy-selection-container">
+		<input type="checkbox" name="guy" id="shawn-guy" checked autocomplete="off">
+		<label class="guy-selection" for="shawn-guy">🦔 shawn</label>
+
+		<input type="checkbox" name="guy" id="kat-guy" autocomplete="off">
+		<label class="guy-selection" for="kat-guy">🦡 kat</label>
+
+		<input type="checkbox" name="guy" id="tom-guy" autocomplete="off">
+		<label class="guy-selection" for="tom-guy">🌝 tom</label>
+	</div>
+
 	<div class="weekday-heading-container"></div>
 
-	<table></table>
+	<div class="schedule-wrapper">
+		<table class="schedule"></table>
+	</div>
 
 	<script src="js/schedule.js"></script>
 	<script src="js/main.js"></script>

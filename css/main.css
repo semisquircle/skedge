@@ -1,11 +1,6 @@
 html, body {
-	height: 100%;
+	height: 100vh;
 	width: 100%;
-}
-
-* {
-	font-family: "IBM Plex Sans";
-	box-sizing: border-box;
 }
 
 body {
@@ -14,18 +9,54 @@ body {
 	--table-hour-height: 60px;
 	--table-data-background: beige;
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	margin: 0;
 	background: var(--table-data-background);
+	overflow: hidden;
 }
 
-.weekday-heading-container {
-	position: fixed;
-	top: 0;
-	left: 0;
+* {
+	font-family: "IBM Plex Sans";
+	box-sizing: border-box;
+}
+
+input[type="checkbox"] {display: none;}
+
+
+
+/* Guy Selection Container */
+.guy-selection-container {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: calc(var(--table-hour-height) + 2 * var(--table-border-size));
 	width: 100%;
 	border: var(--table-border-size) solid var(--table-border-color);
-	border-left: 0;
+}
+
+.guy-selection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	font-size: 20px;
+	font-weight: 600;
+	cursor: pointer;
+}
+.guy-selection ~ .guy-selection {border-left: var(--table-border-size) solid var(--table-border-color);}
+input:checked + .guy-selection {background: var(--table-border-color);}
+
+
+
+/* Weekday Headings */
+.weekday-heading-container {
+	display: flex;
+	min-height: calc(var(--table-hour-height) + var(--table-border-size));
+	width: 100%;
+	border: var(--table-border-size) solid var(--table-border-color);
+	border-top: 0;
 	z-index: 9999;
 }
 
@@ -33,21 +64,30 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 100%;
 	width: 100%;
-	height: var(--table-hour-height);
-	border-left: var(--table-border-size) solid var(--table-border-color);
+}
+.weekday-heading + .weekday-heading {border-left: var(--table-border-size) solid var(--table-border-color);}
+
+
+
+/* Schedule */
+.schedule-wrapper {
+	position: relative;
+	flex-grow: 1;
+	margin-top: calc(-1 * var(--table-border-size));
+	overflow-y: scroll;
 }
 
-table {
+.schedule {
+	position: relative;
 	table-layout: fixed;
 	width: 100%;
-	margin-top: calc(var(--table-hour-height) + var(--table-border-size));
 	border-spacing: var(--table-border-size);
 	background: var(--table-border-color);
 }
 
 tr {height: var(--table-hour-height);}
-
 td {text-align: center;}
 
 .weekday-heading, td {
@@ -60,11 +100,14 @@ td {text-align: center;}
 	transform: rotate(-5deg);
 }
 
+
+
+/* Events */
 .event {
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -75,4 +118,7 @@ td {text-align: center;}
 	color: white;
 	overflow: hidden;
 }
+.show-event {display: flex;}
+.overlaid-event {opacity: 0.5;}
+
 .event-time {margin-top: 3.5px;}

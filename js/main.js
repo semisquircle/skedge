@@ -1,4 +1,5 @@
 var hours = [
+	"7 am",
 	"8 am",
 	"9 am",
 	"10 am",
@@ -25,9 +26,11 @@ var weekdays = [
 	"sat"
 ];
 
-var tableBorderSize = parseFloat($("table").css("--table-border-size"));
+var tableBorderSize = parseFloat($("body").css("--table-border-size"));
 
 
+
+// Generate weekday headings
 for (let w = 0; w < weekdays.length + 1; w++) {
 	if (w == 0) dayData = "";
 	else dayData = weekdays[w - 1];
@@ -49,61 +52,62 @@ for (let h = 0; h < hours.length; h++) {
 		if (w == 0) dataInclude = hours[h];
 		else dataInclude = "";
 
-		var dayData = `
-			<td day="${weekdays[w - 1]}">
-				<span>${dataInclude}</span>
-			</td>
-		`;
+		var dayData = `<td day="${weekdays[w - 1]}"><span>${dataInclude}</span></td>`;
 		dayDataString += dayData;
 	}
 
-	hourRow = `<tr time="${hours[h + 1]}">${dayDataString}</tr>`;
+	hourRow = `<tr time="${hours[h]}">${dayDataString}</tr>`;
 
-	$("table").append(hourRow);
+	$(".schedule").append(hourRow);
 }
 
 
 
 // Adding events to document
-for (let e = 0; e < events.length; e++) {
-	for (let t = 0; t < events[e].times.length; t++) {
-		var eventVar = events[e].times[t];
-		var eventElement = `
-			<div
-				class="event"
-				day="${eventVar.day}"
-				start-time="${eventVar.startTime}"
-				end-time="${eventVar.endTime}"
-				style="background: ${events[e].color}"
-			>
-				<div class="event-name">${events[e].name}</div>
-				<div class="event-time">${eventVar.startTime} - <span>${eventVar.endTime}</span></div>
-			</div>
-		`;
-		$("body").append(eventElement);
+for (let g = 0; g < allEvents.length; g++) {
+	for (let e = 0; e < allEvents[g].events.length; e++) {
+		for (let t = 0; t < allEvents[g].events[e].times.length; t++) {
+			var individualEvent = allEvents[g].events[e];
+			var individualEventTime = individualEvent.times[t];
+			var eventElement = `
+				<div
+					class="event"
+					guy="${allEvents[g].guy}"
+					day="${individualEventTime.day}"
+					start-time="${individualEventTime.startTime}"
+					end-time="${individualEventTime.endTime}"
+					style="background: ${individualEvent.color}"
+				>
+					<div class="event-name">${individualEvent.name}</div>
+					<div class="event-time">
+						${individualEventTime.startTime} - <span>${individualEventTime.endTime}</span>
+					</div>
+				</div>
+			`;
+			$(".schedule-wrapper").append(eventElement);
+		}
 	}
 }
+$(`.event[guy="shawn"]`).addClass("show-event");
 
 
 
-// Function to pad time with a zero in front in needed
-function pad(string, targetLength) {
-	return string.padStart(targetLength, "0");
+// Pad number with zeros
+function pad(num) {
+	return String(num).padStart(2, "0");
 }
 
 
 
 // Function to convert 12-hour time to 24-hour time
 function convertTo24(time) {
-	time = pad(time, 5);
-
 	var [time12h, meridiem] = time.split(" ");
-	var [hours, minutes] = time12h.split(":");
+	var [hour, minutes] = time12h.split(":");
 
-	if (hours == "12") hours = "00";
-	if (meridiem == "pm") hours = parseInt(hours) + 12;
+	if (hour == "12") hour = "00";
+	if (meridiem == "pm") hour = parseInt(hour) + 12;
 
-	return hours + ":" + minutes;
+	return pad(hour) + ":" + minutes;
 }
 
 
@@ -118,25 +122,24 @@ function placeEvents() {
 		var startTime = $(this).attr("start-time");
 		var endTime = $(this).attr("end-time");
 
-		var startHour = startTime.split(":")[0];
-		var startMinutes = (startTime.split(":")[1]).split(" ")[0];
-		var startMeridiem = (startTime.split(":")[1]).split(" ")[1];
-
-		var endHour = endTime.split(":")[0];
-		var endMinutes = (endTime.split(":")[1]).split(" ")[0];
-		var endMeridiem = (endTime.split(":")[1]).split(" ")[1];
-
-		var msDuration = Math.abs(
-			new Date("2003/12/15 " + convertTo24(startHour + ":" + startMinutes)) -
-			new Date("2003/12/15 " + convertTo24(endHour + ":" + endMinutes))
-		);
-		var hrDuration = msDuration / 1000 / 60 / 60;
-
-		var topOffset = $(`tr[time="${startHour + " " + startMeridiem}"]`).offset().top;
+		// Calculating how far down and left the event has to be
+		var firstRecordedHour = hours[0].slice(0, 1) + ":00" + hours[0].slice(1);
+		var msStartBuffer =
+			new Date("2003/12/15 " + convertTo24(startTime)) -
+			new Date("2003/12/15 " + convertTo24(firstRecordedHour));
+		var hrStartBuffer = msStartBuffer / 1000 / 60 / 60;
+		var extraBorderBufferMultiplier = Math.floor(hrStartBuffer) + 1;
+		var topOffset = (hrStartBuffer * hourHeight) + (extraBorderBufferMultiplier * tableBorderSize);
 		var leftOffset = $(`td[day="${day}"]`).offset().left;
 
-		var smartEventHeight = hourHeight * hrDuration;
-		if (hrDuration > 1) smartEventHeight += (Math.floor(hrDuration) * tableBorderSize);
+		// Calculating height/length of event
+		var msDuration =
+			new Date("2003/12/15 " + convertTo24(endTime)) -
+			new Date("2003/12/15 " + convertTo24(startTime));
+		var hrDuration = msDuration / 1000 / 60 / 60;
+		var extraBorderHeightMultiplier = Math.floor(hrDuration);
+		if (Number.isInteger(hrDuration)) extraBorderHeightMultiplier -= 1;
+		var smartEventHeight = (hourHeight * hrDuration) + (extraBorderHeightMultiplier * tableBorderSize);
 
 		$(this).css({
 			"top": topOffset,
@@ -148,6 +151,19 @@ function placeEvents() {
 }
 placeEvents();
 
-window.onresize = function(event) {
+window.onresize = function() {
 	placeEvents();
 }
+
+
+
+$(`input[name="guy"]`).change(function() {
+	var $this = $(this);
+	var guy = $(this).attr("id").replace("-guy", "");
+
+	if ($this.is(":checked")) $(`.event[guy="${guy}"]`).addClass("show-event");
+	else $(`.event[guy="${guy}"]`).removeClass("show-event");
+
+	if ($(`input[name="guy"]:checked`).length >= 2) $(".event").addClass("overlaid-event");
+	else $(".event").removeClass("overlaid-event");
+});
