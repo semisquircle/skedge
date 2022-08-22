@@ -63,7 +63,7 @@ events = [
 		]
 	},
 	{
-		name: "honors lib arts seminar",
+		name: "honors liberal arts seminar",
 		color: "#c41230",
 		times: [
 			{

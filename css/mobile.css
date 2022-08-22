@@ -1,7 +1,11 @@
-td {
-	font-size: 8px;
-}
+.weekday-heading, td {font-size: 9px;}
 
 .event {
 	font-size: 5px;
+}
+
+.event-name {word-spacing: 100vw;}
+.event-time {
+	display: flex;
+	flex-direction: column;
 }

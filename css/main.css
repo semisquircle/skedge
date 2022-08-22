@@ -1,32 +1,63 @@
 html, body {
 	height: 100%;
 	width: 100%;
-	overflow: hidden;
 }
 
-* {font-family: "IBM Plex Sans";}
+* {
+	font-family: "IBM Plex Sans";
+	box-sizing: border-box;
+}
 
 body {
+	--table-border-size: 2px;
+	--table-border-color: white;
+	--table-hour-height: 60px;
+	--table-data-background: beige;
 	position: relative;
 	margin: 0;
+	background: var(--table-data-background);
+}
+
+.weekday-heading-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	border: var(--table-border-size) solid var(--table-border-color);
+	border-left: 0;
+	z-index: 9999;
+}
+
+.weekday-heading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: var(--table-hour-height);
+	border-left: var(--table-border-size) solid var(--table-border-color);
 }
 
 table {
-	--border: 2px;
 	table-layout: fixed;
 	width: 100%;
-	border-spacing: var(--border);
-	background: white;
+	margin-top: calc(var(--table-hour-height) + var(--table-border-size));
+	border-spacing: var(--table-border-size);
+	background: var(--table-border-color);
 }
 
-tr {
-	height: calc((100vh - 16 * var(--border)) / 15);
-}
+tr {height: var(--table-hour-height);}
 
-td {
-	text-align: center;
+td {text-align: center;}
+
+.weekday-heading, td {
+	font-size: 20px;
 	font-weight: 600;
-	background: beige;
+	background: var(--table-data-background);
+}
+.weekday-heading span, td span {
+	display: block;
+	transform: rotate(-5deg);
 }
 
 .event {
@@ -38,7 +69,9 @@ td {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	font-size: 9px;
+	font-size: 10px;
 	border-radius: 4px;
 	color: white;
+	overflow: hidden;
 }
+.event-time {margin-top: 3px;}

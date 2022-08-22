@@ -1,4 +1,4 @@
-hours = [
+var hours = [
 	"8 am",
 	"9 am",
 	"10 am",
@@ -15,7 +15,7 @@ hours = [
 	"9 pm"
 ];
 
-weekdays = [
+var weekdays = [
 	"sun",
 	"mon",
 	"tue",
@@ -25,33 +25,46 @@ weekdays = [
 	"sat"
 ];
 
+var tableBorderSize = parseFloat($("table").css("--table-border-size"));
+
+
+for (let w = 0; w < weekdays.length + 1; w++) {
+	if (w == 0) dayData = "";
+	else dayData = weekdays[w - 1];
+	$(".weekday-heading-container").append(`
+		<div class="weekday-heading">
+			<span>${dayData}<span>
+		</div>
+	`);
+}
+
 
 
 // Looping through hours of the day
-for (let h = 0; h < hours.length + 1; h++) {
+for (let h = 0; h < hours.length; h++) {
 	var dayDataString = "";
 
 	// Looping through days of the week
 	for (let w = 0; w < weekdays.length + 1; w++) {
-		if (w == 0) dataInclude = hours[h - 1];
-		else if (h == 0) dataInclude = weekdays[w - 1];
+		if (w == 0) dataInclude = hours[h];
 		else dataInclude = "";
 
-		var dayData = `<td day="${weekdays[w - 1]}">${dataInclude}</td>`;
+		var dayData = `
+			<td day="${weekdays[w - 1]}">
+				<span>${dataInclude}</span>
+			</td>
+		`;
 		dayDataString += dayData;
 	}
 
-	if (h == 0) hourRow = "<thead>" + dayDataString + "</thead>";
-	else hourRow = `<tr time="${hours[h - 1]}">${dayDataString}</tr>`;
+	hourRow = `<tr time="${hours[h + 1]}">${dayDataString}</tr>`;
 
 	$("table").append(hourRow);
 }
 
-$("td").eq(0).empty();
 
 
-
-// Placing events on schedule
+// Adding events to document
 for (let e = 0; e < events.length; e++) {
 	for (let t = 0; t < events[e].times.length; t++) {
 		var eventVar = events[e].times[t];
@@ -63,8 +76,8 @@ for (let e = 0; e < events.length; e++) {
 				end-time="${eventVar.endTime}"
 				style="background: ${events[e].color}"
 			>
-				<div>${events[e].name}</div>
-				<div>${eventVar.startTime} - ${eventVar.endTime}</div>
+				<div class="event-name">${events[e].name}</div>
+				<div class="event-time">${eventVar.startTime} - <span>${eventVar.endTime}</span></div>
 			</div>
 		`;
 		$("body").append(eventElement);
@@ -97,7 +110,7 @@ function convertTo24(time) {
 
 // Function to size and place events on schedule
 function placeEvents() {
-	var hourHeight = $("td").outerHeight();
+	var hourHeight = $("tr").outerHeight();
 	var hourWidth = $("td").outerWidth();
 
 	$(".event").each(function() {
@@ -123,7 +136,7 @@ function placeEvents() {
 		var leftOffset = $(`td[day="${day}"]`).offset().left;
 
 		var smartEventHeight = hourHeight * hrDuration;
-		if (hrDuration > 1) smartEventHeight += (Math.floor(hrDuration) * parseFloat($("table").css("--border")));
+		if (hrDuration > 1) smartEventHeight += (Math.floor(hrDuration) * tableBorderSize);
 
 		$(this).css({
 			"top": topOffset,
