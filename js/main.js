@@ -157,6 +157,7 @@ window.onresize = function() {
 
 
 
+// On guy selection change
 $(`input[name="guy"]`).change(function() {
 	var $this = $(this);
 	var guy = $(this).attr("id").replace("-guy", "");
