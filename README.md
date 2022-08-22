@@ -1,2 +1,2 @@
-# shawn-schedule
+# Shawn's Weekly Schedule
  
