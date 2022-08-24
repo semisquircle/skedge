@@ -20,6 +20,8 @@ body {
 
 * {
 	font-family: "IBM Plex Sans";
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
 	box-sizing: border-box;
 }
 
