@@ -43,7 +43,7 @@ input[type="checkbox"] {display: none;}
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	min-height: 100%;
 	width: 100%;
 	font-size: 20px;
 	font-weight: 600;
@@ -68,7 +68,7 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
+	min-height: 100%;
 	width: 100%;
 }
 .weekday-heading + .weekday-heading {border-left: var(--table-border-size) solid var(--table-border-color);}
