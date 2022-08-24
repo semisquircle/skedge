@@ -20,7 +20,6 @@ body {
 
 * {
 	font-family: "IBM Plex Sans";
-	-webkit-appearance: none;
 	-webkit-tap-highlight-color: transparent;
 	box-sizing: border-box;
 }
@@ -43,7 +42,7 @@ input[type="checkbox"] {display: none;}
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100%;
+	height: 100%;
 	width: 100%;
 	font-size: 20px;
 	font-weight: 600;
@@ -68,7 +67,7 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100%;
+	height: 100%;
 	width: 100%;
 }
 .weekday-heading + .weekday-heading {border-left: var(--table-border-size) solid var(--table-border-color);}
