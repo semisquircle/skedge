@@ -298,6 +298,17 @@ allEvents = [
 						endTime: "5:15 pm"
 					}
 				]
+			},
+			{
+				name: "theatre forum",
+				color: "#55f",
+				times: [
+					{
+						day: "fri",
+						startTime: "3:00 pm",
+						endTime: "4:15 pm"
+					}
+				]
 			}
 		]
 	}

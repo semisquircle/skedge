@@ -165,6 +165,6 @@ $(`input[name="guy"]`).change(function() {
 	if ($this.is(":checked")) $(`.event[guy="${guy}"]`).addClass("show-event");
 	else $(`.event[guy="${guy}"]`).removeClass("show-event");
 
-	if ($(`input[name="guy"]:checked`).length >= 2) $(".event").addClass("overlaid-event");
-	else $(".event").removeClass("overlaid-event");
+	/* if ($(`input[name="guy"]:checked`).length >= 2) $(".event").addClass("overlaid-event");
+	else $(".event").removeClass("overlaid-event"); */
 });
