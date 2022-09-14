@@ -247,22 +247,6 @@ allEvents = [
 				]
 			},
 			{
-				name: "honors liberal arts seminar",
-				color: "#55f",
-				times: [
-					{
-						day: "tue",
-						startTime: "2:00 pm",
-						endTime: "3:15 pm"
-					},
-					{
-						day: "thu",
-						startTime: "2:00 pm",
-						endTime: "3:15 pm"
-					}
-				]
-			},
-			{
 				name: "percussion ensemble",
 				color: "#55f",
 				times: [
