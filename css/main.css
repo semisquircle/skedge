@@ -7,9 +7,9 @@ html, body {
 
 body {
 	--table-border-size: 2px;
-	--table-border-color: white;
+	--table-border-color: black;
 	--table-hour-height: 60px;
-	--table-data-background: beige;
+	--table-data-background: #dcd6c8;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -84,6 +84,7 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 	flex-grow: 1;
 	margin-top: calc(-1 * var(--table-border-size));
 	overflow-y: scroll;
+	scrollbar-width: none;
 }
 
 .schedule {

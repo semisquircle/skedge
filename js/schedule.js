@@ -3,67 +3,82 @@ allEvents = [
 		guy: "shawn",
 		events: [
 			{
-				name: "calc 2",
-				color: "purple",
-				times: [
-					{
-						day: "mon",
-						startTime: "5:30 pm",
-						endTime: "7:30 pm"
-					},
-					{
-						day: "wed",
-						startTime: "5:30 pm",
-						endTime: "7:30 pm"
-					}
-				]
-			},
-			{
-				name: "sociology",
-				color: "purple",
+				name: "american politics",
+				color: "#169a74",
 				times: [
 					{
 						day: "tue",
-						startTime: "12:45 pm",
-						endTime: "2:06 pm"
+						startTime: "9:30 am",
+						endTime: "10:45 am"
 					},
 					{
 						day: "thu",
-						startTime: "12:45 pm",
-						endTime: "2:06 pm"
+						startTime: "9:30 am",
+						endTime: "10:45 am"
 					}
 				]
 			},
+
 			{
-				name: "c++",
-				color: "purple",
+				name: "3d game programming",
+				color: "#169a74",
 				times: [
 					{
+						day: "tue",
+						startTime: "2:00 pm",
+						endTime: "3:15 pm"
+					},
+					{
 						day: "thu",
-						startTime: "5:30 pm",
-						endTime: "8:15 pm"
+						startTime: "2:00 pm",
+						endTime: "3:15 pm"
 					}
 				]
 			},
+
 			{
-				name: "c++ lab",
-				color: "purple",
+				name: "religion wisdom",
+				color: "#169a74",
 				times: [
 					{
-						day: "thu",
-						startTime: "8:30 pm",
-						endTime: "9:51 pm"
+						day: "mon",
+						startTime: "10:00 am",
+						endTime: "10:50 am"
+					},
+					{
+						day: "wed",
+						startTime: "10:00 am",
+						endTime: "10:50 am"
+					},
+					{
+						day: "fri",
+						startTime: "10:00 am",
+						endTime: "10:50 am"
+					}
+				]
+			},
+
+			{
+				name: "data structures",
+				color: "#169a74",
+				times: [
+					{
+						day: "mon",
+						startTime: "1:00 pm",
+						endTime: "1:50 pm"
+					},
+					{
+						day: "wed",
+						startTime: "1:00 pm",
+						endTime: "1:50 pm"
+					},
+					{
+						day: "fri",
+						startTime: "1:00 pm",
+						endTime: "1:50 pm"
 					}
 				]
 			},
 		]
-	},
-	{
-		guy: "kat",
-		events: []
-	},
-	{
-		guy: "tom",
-		events: []
 	}
 ]
