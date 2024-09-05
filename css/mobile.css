@@ -1,6 +1,6 @@
 body {--table-hour-height: 60px;}
 
-.weekday-heading, .td:nth-child(1) {font-size: 9px;}
+.weekday-heading, .td:nth-child(1) {font-size: 10px;}
 
 .event {
 	font-size: 6px;
