@@ -10,6 +10,7 @@
 	--ui-color2: black;
 	--ui-color3: #a7d7f9;
 	--ui-color4: #f6f6f6;
+	--ui-color5: #a2a9b1;
 }
 
 html, body {
@@ -22,7 +23,7 @@ html, body {
 body {
 	--table-border-size: 1px;
 	--table-hour-height: calc((100vh - var(--table-border-size)) / 11 + var(--table-border-size));
-	--table-border-color: var(--ui-color3);
+	--table-border-color: var(--ui-color5);
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -148,6 +149,7 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 	font-family: sans-serif;
 	font-size: 8px;
 	line-height: 1.3;
+	padding: 10px;
 	color: var(--ui-color2);
 	overflow: hidden;
 }
