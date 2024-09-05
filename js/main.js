@@ -74,6 +74,7 @@ for (let g = 0; g < allEvents.length; g++) {
 				>
 					<div class="event-name">${individualEvent.name}</div>
 					<div class="event-abbr">${individualEvent.abbr}</div>
+					<div class="event-code">${individualEvent.code}</div>
 					<div class="event-time">
 						<span>${individualEventTime.startTime} - </span><span>${individualEventTime.endTime}</span>
 					</div>

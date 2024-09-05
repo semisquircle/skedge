@@ -9,6 +9,7 @@ body {--table-hour-height: 60px;}
 
 .event-name {display: none;}
 .event-abbr {display: block;}
+.event-code {display: none;}
 .event-time {
 	display: flex;
 	flex-direction: column;

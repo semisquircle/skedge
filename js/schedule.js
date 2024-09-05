@@ -3,8 +3,9 @@ allEvents = [
 		guy: "shawn",
 		events: [
 			{
-				name: "Linear Algebra 1 (MATH 3210)",
+				name: "Linear Algebra 1",
 				abbr: "LinAlg",
+				code: "MATH 3210",
 				color: "#b0c4de",
 				times: [
 					{
@@ -26,8 +27,9 @@ allEvents = [
 			},
 
 			{
-				name: "Living With the Dead: Mortuary Analysis (ANTH 3110)",
+				name: "Living With the Dead: Mortuary Analysis",
 				abbr: "LWTD",
+				code: "ANTH 3110",
 				color: "#f8b290",
 				times: [
 					{
@@ -49,8 +51,9 @@ allEvents = [
 			},
 
 			{
-				name: "Senior Project 1: Software Engineering (CMSC 4900)",
+				name: "Senior Project 1: Software Engineering",
 				abbr: "SenProj",
+				code: "CMSC 4900",
 				color: "#efbeba",
 				times: [
 					{
@@ -67,8 +70,9 @@ allEvents = [
 			},
 
 			{
-				name: "Logic and Switching Theory of the Computer (CMSC 2100)",
+				name: "Logic and Switching Theory of the Computer",
 				abbr: "LogSwitch",
+				code: "CMSC 2100",
 				color: "#e5dbc5",
 				times: [
 					{
@@ -90,8 +94,9 @@ allEvents = [
 			},
 
 			{
-				name: "Computer Graphics (CMSC 3780)",
+				name: "Computer Graphics",
 				abbr: "CompGra",
+				code: "CMSC 3780",
 				color: "#a1bdac",
 				times: [
 					{
