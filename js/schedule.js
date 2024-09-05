@@ -4,6 +4,7 @@ allEvents = [
 		events: [
 			{
 				name: "Computer Graphics",
+				abbr: "CompGra",
 				color: "#a1bdac",
 				times: [
 					{
@@ -20,7 +21,8 @@ allEvents = [
 			},
 
 			{
-				name: "Linear Algebra 1",
+				name: "Linear Algebra 1 (MATH 3210)",
+				abbr: "LinAlg",
 				color: "#b0c4de",
 				times: [
 					{
@@ -42,7 +44,8 @@ allEvents = [
 			},
 
 			{
-				name: "Living With the Dead",
+				name: "Living With the Dead: Mortuary Analysis",
+				abbr: "LWTD",
 				color: "#f8b290",
 				times: [
 					{
@@ -64,7 +67,8 @@ allEvents = [
 			},
 
 			{
-				name: "Logic and Switching Theory",
+				name: "Logic and Switching Theory of the Computer",
+				abbr: "LogSwitch",
 				color: "#e5dbc5",
 				times: [
 					{
@@ -86,7 +90,8 @@ allEvents = [
 			},
 
 			{
-				name: "Senior Project 1",
+				name: "Senior Project 1: Software Engineering",
+				abbr: "SenProj",
 				color: "#efbeba",
 				times: [
 					{

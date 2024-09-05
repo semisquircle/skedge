@@ -73,8 +73,9 @@ for (let g = 0; g < allEvents.length; g++) {
 					style="background: ${individualEvent.color}"
 				>
 					<div class="event-name">${individualEvent.name}</div>
+					<div class="event-abbr">${individualEvent.abbr}</div>
 					<div class="event-time">
-						${individualEventTime.startTime} - <span>${individualEventTime.endTime}</span>
+						<span>${individualEventTime.startTime} - </span><span>${individualEventTime.endTime}</span>
 					</div>
 				</div>
 			`;
