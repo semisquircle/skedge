@@ -4,7 +4,7 @@ allEvents = [
 		events: [
 			{
 				name: "Computer Graphics",
-				color: "var(--ui-color5)",
+				color: "#a1bdac",
 				times: [
 					{
 						day: "tue",
@@ -21,7 +21,7 @@ allEvents = [
 
 			{
 				name: "Linear Algebra 1",
-				color: "var(--ui-color5)",
+				color: "#b0c4de",
 				times: [
 					{
 						day: "mon",
@@ -43,7 +43,7 @@ allEvents = [
 
 			{
 				name: "Living With the Dead",
-				color: "var(--ui-color5)",
+				color: "#f8b290",
 				times: [
 					{
 						day: "mon",
@@ -65,7 +65,7 @@ allEvents = [
 
 			{
 				name: "Logic and Switching Theory",
-				color: "var(--ui-color5)",
+				color: "#e5dbc5",
 				times: [
 					{
 						day: "mon",
@@ -87,7 +87,7 @@ allEvents = [
 
 			{
 				name: "Senior Project 1",
-				color: "var(--ui-color5)",
+				color: "#efbeba",
 				times: [
 					{
 						day: "mon",

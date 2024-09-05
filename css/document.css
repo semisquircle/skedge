@@ -1,0 +1,32 @@
+@font-face {
+	font-family: "Linux Libertine";
+	font-weight: 400;
+	font-style: normal;
+	src: url("../LinLibertine_R.ttf") format("truetype");
+}
+
+:root {
+	--ui-color1: white;
+	--ui-color2: black;
+	--ui-color3: #a7d7f9;
+	--ui-color4: #f6f6f6;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	/* IOS Safari Fix */
+	height: -webkit-fill-available;
+}
+
+body {
+	--table-border-size: 1px;
+	--table-hour-height: calc((100vh - var(--table-border-size)) / 11 + var(--table-border-size));
+	--table-border-color: var(--ui-color3);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	background: var(--ui-color1);
+	overflow: hidden;
+}
