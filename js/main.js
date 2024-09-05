@@ -40,18 +40,17 @@ for (let w = 0; w < weekdays.length + 1; w++) {
 
 // Looping through hours of the day
 for (let h = 0; h < hours.length; h++) {
-	var dayDataString = "";
+	let hourRow = $(`<div class="tr"></div>`);
 
 	// Looping through days of the week
 	for (let w = 0; w < weekdays.length + 1; w++) {
-		if (w == 0) dataInclude = hours[h];
-		else dataInclude = "";
-
-		var dayData = `<td day="${weekdays[w - 1]}"><span>${dataInclude}</span></td>`;
-		dayDataString += dayData;
+		let dataInclude = (w == 0) ? hours[h] : "";
+		hourRow.append(`
+			<div class="td" day="${weekdays[w - 1]}" time="${hours[h]}">
+				<span>${dataInclude}</span>
+			</div>
+		`);
 	}
-
-	hourRow = `<tr time="${hours[h]}">${dayDataString}</tr>`;
 
 	$(".schedule").append(hourRow);
 }
@@ -109,38 +108,38 @@ function convertTo24(time) {
 
 // Function to size and place events on schedule
 function placeEvents() {
-	var hourHeight = $("tr").outerHeight();
-	var hourWidth = $("td").outerWidth();
+	let hourHeight = $(".tr").outerHeight() - 2 * tableBorderSize;
+	let hourWidth = $(".td").width();
 
 	$(".event").each(function() {
-		var day = $(this).attr("day");
-		var startTime = $(this).attr("start-time");
-		var endTime = $(this).attr("end-time");
+		let day = $(this).attr("day");
+		let startTime = $(this).attr("start-time");
+		let endTime = $(this).attr("end-time");
 
 		// Calculating how far down and left the event has to be
-		var firstRecordedHour = hours[0].slice(0, 1) + ":00" + hours[0].slice(1);
-		var msStartBuffer =
-			new Date("2003/12/15 " + convertTo24(startTime)) -
-			new Date("2003/12/15 " + convertTo24(firstRecordedHour));
-		var hrStartBuffer = msStartBuffer / 1000 / 60 / 60;
-		var extraBorderBufferMultiplier = Math.floor(hrStartBuffer) + 1;
-		var topOffset = (hrStartBuffer * hourHeight) + (extraBorderBufferMultiplier * tableBorderSize);
-		var leftOffset = $(`td[day="${day}"]`).offset().left;
+		let startHr = parseInt(startTime.split(" ")[0].split(":")[0]);
+		let startMin = parseInt(startTime.split(" ")[0].split(":")[1]);
+		let startMinProportion = startMin / 60;
+		let startMeridiem = startTime.split(" ")[1];
+		let startTd = $(`[day="${day}"][time="${startHr} ${startMeridiem}"]`);
+		let topOffset = startTd.position().top + (hourHeight * startMinProportion) + tableBorderSize;
+		let leftOffset = startTd.position().left;
 
-		// Calculating height/length of event
-		var msDuration =
+		// Calculating height
+		let msDuration =
 			new Date("2003/12/15 " + convertTo24(endTime)) -
 			new Date("2003/12/15 " + convertTo24(startTime));
-		var hrDuration = msDuration / 1000 / 60 / 60;
-		var extraBorderHeightMultiplier = Math.floor(hrDuration);
+		let hrDuration = msDuration / 1000 / 60 / 60;
+		let extraBorderHeightMultiplier = Math.floor(hrDuration);
 		if (Number.isInteger(hrDuration)) extraBorderHeightMultiplier -= 1;
-		var smartEventHeight = (hourHeight * hrDuration) + (extraBorderHeightMultiplier * tableBorderSize);
+		let smartEventHeight = (hourHeight * hrDuration) + (extraBorderHeightMultiplier * tableBorderSize);
+		console.log(hrDuration);
 
 		$(this).css({
 			"top": topOffset,
 			"left": leftOffset,
-			"height": smartEventHeight,
-			"width": hourWidth
+			"width": hourWidth,
+			"height": smartEventHeight
 		});
 	});
 }
