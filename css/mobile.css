@@ -1,4 +1,4 @@
-.weekday-heading, td {font-size: 9px !important;}
+.weekday-heading, .td:nth-child(1) {font-size: 9px;}
 
 .event {
 	font-size: 6px;
