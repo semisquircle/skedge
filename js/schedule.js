@@ -3,34 +3,10 @@ allEvents = [
 		guy: "shawn",
 		events: [
 			{
-				name: "Linear Algebra 1",
-				abbr: "LinAlg",
-				code: "MATH 3210",
-				color: "#b0c4de",
-				times: [
-					{
-						day: "mon",
-						startTime: "9:00 am",
-						endTime: "9:50 am"
-					},
-					{
-						day: "wed",
-						startTime: "9:00 am",
-						endTime: "9:50 am"
-					},
-					{
-						day: "fri",
-						startTime: "9:00 am",
-						endTime: "9:50 am"
-					},
-				]
-			},
-
-			{
-				name: "Living With the Dead: Mortuary Analysis",
-				abbr: "LWTD",
-				code: "ANTH 3110",
-				color: "#f8b290",
+				name: "Data Communication and Networking",
+				abbr: "DataComm",
+				code: "CMSC 3180",
+				bgColor: "#b0c4de",
 				times: [
 					{
 						day: "mon",
@@ -51,53 +27,29 @@ allEvents = [
 			},
 
 			{
-				name: "Senior Project 1: Software Engineering",
-				abbr: "SenProj",
-				code: "CMSC 4900",
-				color: "#efbeba",
+				name: "Senior Project II",
+				abbr: "SenProj2",
+				code: "CMSC 4920",
+				bgColor: "#f8b290",
 				times: [
 					{
 						day: "mon",
 						startTime: "3:00 pm",
-						endTime: "4:15 pm"
+						endTime: "4:30 pm"
 					},
 					{
 						day: "wed",
 						startTime: "3:00 pm",
-						endTime: "4:15 pm"
+						endTime: "4:30 pm"
 					}
 				]
 			},
 
 			{
-				name: "Logic and Switching Theory of the Computer",
-				abbr: "LogSwitch",
-				code: "CMSC 2100",
-				color: "#e5dbc5",
-				times: [
-					{
-						day: "mon",
-						startTime: "11:00 am",
-						endTime: "11:50 am"
-					},
-					{
-						day: "wed",
-						startTime: "11:00 am",
-						endTime: "11:50 am"
-					},
-					{
-						day: "fri",
-						startTime: "11:00 am",
-						endTime: "11:50 am"
-					},
-				]
-			},
-
-			{
-				name: "Computer Graphics",
-				abbr: "CompGra",
-				code: "CMSC 3780",
-				color: "#a1bdac",
+				name: "Operating Systems",
+				abbr: "OSes",
+				code: "CMSC 4000",
+				bgColor: "#efbeba",
 				times: [
 					{
 						day: "tue",
@@ -110,7 +62,32 @@ allEvents = [
 						endTime: "4:45 pm"
 					}
 				]
-			}
+			},
+
+
+			/* {
+				name: "Work",
+				abbr: "Work",
+				code: "AEO",
+				bgColor: "#a8adbf",
+				times: [
+					{
+						day: "mon",
+						startTime: "5:00 pm",
+						endTime: "9:00 pm"
+					},
+					{
+						day: "thu",
+						startTime: "9:45 am",
+						endTime: "2:15 pm"
+					},
+					{
+						day: "fri",
+						startTime: "3:00 pm",
+						endTime: "7:00 pm"
+					},
+				]
+			}, */
 		]
 	}
 ];

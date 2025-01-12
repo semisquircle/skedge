@@ -70,7 +70,7 @@ for (let g = 0; g < allEvents.length; g++) {
 					day="${individualEventTime.day}"
 					start-time="${individualEventTime.startTime}"
 					end-time="${individualEventTime.endTime}"
-					style="background: ${individualEvent.color}"
+					style="background: ${individualEvent.bgColor}"
 				>
 					<div class="event-name">${individualEvent.name}</div>
 					<div class="event-abbr">${individualEvent.abbr}</div>
