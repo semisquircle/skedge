@@ -6,7 +6,7 @@ allEvents = [
 				name: "Data Communication and Networking",
 				abbr: "DataComm",
 				code: "CMSC 3180",
-				bgColor: "#b0c4de",
+				bgColor: "#f6b1b1",
 				times: [
 					{
 						day: "mon",
@@ -30,7 +30,7 @@ allEvents = [
 				name: "Senior Project II",
 				abbr: "SenProj2",
 				code: "CMSC 4920",
-				bgColor: "#f8b290",
+				bgColor: "#f6c9b1",
 				times: [
 					{
 						day: "mon",
@@ -49,7 +49,7 @@ allEvents = [
 				name: "Operating Systems",
 				abbr: "OSes",
 				code: "CMSC 4000",
-				bgColor: "#efbeba",
+				bgColor: "#a4c1a4",
 				times: [
 					{
 						day: "tue",
@@ -64,30 +64,74 @@ allEvents = [
 				]
 			},
 
-
-			/* {
-				name: "Work",
-				abbr: "Work",
-				code: "AEO",
-				bgColor: "#a8adbf",
+			{
+				name: "People and the Planet",
+				abbr: "PATP",
+				code: "GEOG 1050",
+				bgColor: "#b1b1f6",
 				times: [
 					{
 						day: "mon",
-						startTime: "5:00 pm",
+						startTime: "11:00 am",
+						endTime: "11:50 am"
+					},
+					{
+						day: "wed",
+						startTime: "11:00 am",
+						endTime: "11:50 am"
+					},
+					{
+						day: "fri",
+						startTime: "11:00 am",
+						endTime: "11:50 am"
+					}
+				]
+			},
+
+
+			{
+				name: "Work",
+				abbr: "Work",
+				code: "AEO",
+				bgColor: "#cccccc",
+				times: [
+					{
+						day: "mon",
+						startTime: "5:30 pm",
+						endTime: "9:00 pm"
+					},
+					{
+						day: "tue",
+						startTime: "8:00 am",
+						endTime: "12:00 pm"
+					},
+					{
+						day: "tue",
+						startTime: "5:30 pm",
+						endTime: "9:00 pm"
+					},
+					{
+						day: "wed",
+						startTime: "5:30 pm",
 						endTime: "9:00 pm"
 					},
 					{
 						day: "thu",
-						startTime: "9:45 am",
-						endTime: "2:15 pm"
+						startTime: "8:00 am",
+						endTime: "12:00 pm"
+					},
+					{
+						day: "thu",
+						startTime: "5:30 pm",
+						endTime: "9:00 pm"
 					},
 					{
 						day: "fri",
-						startTime: "3:00 pm",
-						endTime: "7:00 pm"
+						startTime: "5:30 pm",
+						endTime: "9:00 pm"
 					},
 				]
-			}, */
+			}
 		]
 	}
 ];
