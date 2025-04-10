@@ -1,2 +1,2 @@
-# good ol fashion weekly schedule
+# good ol' fashion weekly schedule
  
