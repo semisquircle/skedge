@@ -1,2 +1,2 @@
-# Shawn's Weekly Schedule
+# good ol fashion weekly schedule
  

@@ -86,10 +86,10 @@ allEvents = [
 						endTime: "11:50 am"
 					}
 				]
-			},
+			}
 
 
-			{
+			/* {
 				name: "Work",
 				abbr: "Work",
 				code: "AEO",
@@ -131,7 +131,7 @@ allEvents = [
 						endTime: "9:00 pm"
 					},
 				]
-			}
+			} */
 		]
 	}
 ];
