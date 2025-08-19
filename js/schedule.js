@@ -25,7 +25,7 @@ allEvents = [
 				name: "Computer Architecture",
 				abbr: "CompArch",
 				code: "CMSC 3240",
-				bgColor: "blue",
+				bgColor: "green",
 				times: [
 					{
 						day: "tue",
