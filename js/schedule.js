@@ -6,7 +6,7 @@ allEvents = [
 				name: "Analysis of Algorithms",
 				abbr: "AnalAlg",
 				code: "CMSC 3140",
-				bgColor: "#f6b1b1",
+				bgColor: "pink",
 				times: [
 					{
 						day: "tue",
@@ -25,7 +25,7 @@ allEvents = [
 				name: "Computer Architecture",
 				abbr: "CompArch",
 				code: "CMSC 3240",
-				bgColor: "#f6c9b1",
+				bgColor: "blue",
 				times: [
 					{
 						day: "tue",
@@ -44,7 +44,7 @@ allEvents = [
 				name: "Fortran",
 				abbr: "4Tran",
 				code: "CMSC 3360",
-				bgColor: "#a4c1a4",
+				bgColor: "purple",
 				times: [
 					{
 						day: "tue",
@@ -63,7 +63,7 @@ allEvents = [
 				name: "Theory of Languages",
 				abbr: "ToL",
 				code: "CMSC 4140",
-				bgColor: "#b1b1f6",
+				bgColor: "orange",
 				times: [
 					{
 						day: "mon",

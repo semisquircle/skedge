@@ -11,6 +11,13 @@
 	--ui-color3: #a7d7f9;
 	--ui-color4: #f6f6f6;
 	--ui-color5: #a2a9b1;
+
+	--event-pink:	#f3c7d1;
+	--event-orange:	#f9dac5;
+	--event-yellow:	#fbeecc;
+	--event-green:	#cae5e0;
+	--event-blue:	#c6dff3;
+	--event-purple: #dbcdf0;
 }
 
 html, body {
