@@ -1,4 +1,6 @@
 var hours = [
+	"6 am",
+	"7 am",
 	"8 am",
 	"9 am",
 	"10 am",
@@ -9,10 +11,6 @@ var hours = [
 	"3 pm",
 	"4 pm",
 	"5 pm",
-	"6 pm",
-	"7 pm",
-	"8 pm",
-	"9 pm"
 ];
 
 var weekdays = [

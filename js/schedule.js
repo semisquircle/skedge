@@ -3,87 +3,82 @@ allEvents = [
 		guy: "shawn",
 		events: [
 			{
-				name: "Data Communication and Networking",
-				abbr: "DataComm",
-				code: "CMSC 3180",
+				name: "Analysis of Algorithms",
+				abbr: "AnalAlg",
+				code: "CMSC 3140",
 				bgColor: "#f6b1b1",
 				times: [
 					{
-						day: "mon",
-						startTime: "1:00 pm",
-						endTime: "1:50 pm"
+						day: "tue",
+						startTime: "11:00 am",
+						endTime: "12:15 pm"
 					},
 					{
-						day: "wed",
-						startTime: "1:00 pm",
-						endTime: "1:50 pm"
-					},
-					{
-						day: "fri",
-						startTime: "1:00 pm",
-						endTime: "1:50 pm"
+						day: "thu",
+						startTime: "11:00 am",
+						endTime: "12:15 pm"
 					},
 				]
 			},
 
 			{
-				name: "Senior Project II",
-				abbr: "SenProj2",
-				code: "CMSC 4920",
+				name: "Computer Architecture",
+				abbr: "CompArch",
+				code: "CMSC 3240",
 				bgColor: "#f6c9b1",
 				times: [
 					{
-						day: "mon",
-						startTime: "3:00 pm",
-						endTime: "4:30 pm"
+						day: "tue",
+						startTime: "12:30 pm",
+						endTime: "1:45 pm"
 					},
 					{
-						day: "wed",
-						startTime: "3:00 pm",
-						endTime: "4:30 pm"
+						day: "thu",
+						startTime: "12:30 pm",
+						endTime: "1:45 pm"
 					}
 				]
 			},
 
 			{
-				name: "Operating Systems",
-				abbr: "OSes",
-				code: "CMSC 4000",
+				name: "Fortran",
+				abbr: "4Tran",
+				code: "CMSC 3360",
 				bgColor: "#a4c1a4",
 				times: [
 					{
 						day: "tue",
-						startTime: "3:30 pm",
-						endTime: "4:45 pm"
+						startTime: "8:00 am",
+						endTime: "9:15 am"
 					},
 					{
 						day: "thu",
-						startTime: "3:30 pm",
-						endTime: "4:45 pm"
+						startTime: "8:00 am",
+						endTime: "9:15 am"
 					}
 				]
 			},
 
 			{
-				name: "People and the Planet",
-				abbr: "PATP",
-				code: "GEOG 1050",
+				name: "Theory of Languages",
+				abbr: "ToL",
+				code: "CMSC 4140",
 				bgColor: "#b1b1f6",
 				times: [
 					{
 						day: "mon",
-						startTime: "11:00 am",
-						endTime: "11:50 am"
+						startTime: "1:00 pm",
+						endTime: "1:50 pm"
 					},
 					{
 						day: "wed",
-						startTime: "11:00 am",
-						endTime: "11:50 am"
+						startTime: "1:00 pm",
+						endTime: "1:50 pm"
 					},
 					{
 						day: "fri",
-						startTime: "11:00 am",
-						endTime: "11:50 am"
+							startTime: "1:00 pm",
+						endTime: "1:50 pm"
 					}
 				]
 			}
