@@ -28,14 +28,14 @@ html, body {
 }
 
 body {
-	--table-border-size: 1px;
-	--table-hour-height: calc((100vh - var(--table-border-size)) / 12 + var(--table-border-size));
+	--table-border-width: 1px;
+	--table-hour-height: calc((100vh - 13 * var(--table-border-width)) / 12);
 	--table-border-color: var(--ui-color5);
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	background: var(--ui-color1);
+	background: var(--table-border-color);
 	overflow: hidden;
 }
 
@@ -53,10 +53,10 @@ input[type="checkbox"] {display: none;}
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: calc(var(--table-hour-height) + 2 * var(--table-border-size));
-	min-height: calc(var(--table-hour-height) + 2 * var(--table-border-size));
+	height: calc(var(--table-hour-height) + 2 * var(--table-border-width));
+	min-height: calc(var(--table-hour-height) + 2 * var(--table-border-width));
 	width: 100%;
-	border: var(--table-border-size) solid var(--table-border-color);
+	border: var(--table-border-width) solid var(--table-border-color);
 }
 
 .guy-selection {
@@ -70,7 +70,7 @@ input[type="checkbox"] {display: none;}
 	font-weight: 600;
 	cursor: pointer;
 }
-.guy-selection ~ .guy-selection {border-left: var(--table-border-size) solid var(--table-border-color);}
+.guy-selection ~ .guy-selection {border-left: var(--table-border-width) solid var(--table-border-color);}
 input:checked + .guy-selection {background: var(--table-border-color);}
 
 
@@ -78,9 +78,10 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 /* Weekday Headings */
 .weekday-heading-container {
 	display: flex;
-	height: var(--table-hour-height);
+	height: calc(var(--table-hour-height) + var(--table-border-width));
 	width: 100%;
-	border-top: 0;
+	padding-right: var(--table-border-width);
+	padding-top: var(--table-border-width);
 	z-index: 9999;
 }
 
@@ -89,12 +90,10 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	min-height: 100%;
 	width: 100%;
-	border: var(--table-border-size) solid var(--table-border-color);
+	margin-left: var(--table-border-width);
 	text-transform: capitalize;
 }
-.weekday-heading + .weekday-heading {margin-left: calc(-1 * var(--table-border-size));}
 
 
 
@@ -102,7 +101,7 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 .schedule-wrapper {
 	position: relative;
 	flex-grow: 1;
-	margin-top: calc(-1 * var(--table-border-size));
+	padding-bottom: var(--table-border-width);
 	overflow-y: scroll;
 	scrollbar-width: none;
 }
@@ -110,25 +109,24 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 .schedule {
 	position: relative;
 	width: 100%;
-	background: var(--table-border-color);
 }
 
 .tr {
 	display: flex;
-	height: calc(var(--table-hour-height));
+	height: calc(var(--table-hour-height) + var(--table-border-width));
+	padding-right: var(--table-border-width);
+	padding-top: var(--table-border-width);
 }
-.tr + .tr {margin-top: calc(-1 * var(--table-border-size));}
 .td {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	width: 100%;
+	width: calc(100vw / 8);
+	margin-left: var(--table-border-width);
 	background: var(--ui-color1);
-	border: var(--table-border-size) solid var(--table-border-color);
 	overflow: hidden;
 }
-.td + .td {margin-left: calc(-1 * var(--table-border-size));}
 
 .weekday-heading, .td:nth-child(1) {
 	font-family: "Linux Libertine";
@@ -152,6 +150,7 @@ input:checked + .guy-selection {background: var(--table-border-color);}
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	width: calc((100vw - 9 * var(--table-border-width)) / 8);
 	font-family: sans-serif;
 	font-size: 6px;
 	line-height: 1.3;

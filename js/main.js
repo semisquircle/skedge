@@ -22,7 +22,7 @@ var weekdays = [
 	"sat"
 ];
 
-var tableBorderSize = parseFloat($("body").css("--table-border-size"));
+var tableBorderWidth = parseFloat($("body").css("--table-border-width"));
 
 
 
@@ -111,8 +111,7 @@ function convertTo24(time) {
 
 // Function to size and place events on schedule
 function placeEvents() {
-	let hourHeight = $(".tr").outerHeight() - 2 * tableBorderSize;
-	let hourWidth = $(".td").width();
+	let hourHeight = $(".td").outerHeight();
 
 	$(".event").each(function() {
 		let day = $(this).attr("day");
@@ -125,8 +124,8 @@ function placeEvents() {
 		let startMinProportion = startMin / 60;
 		let startMeridiem = startTime.split(" ")[1];
 		let startTd = $(`[day="${day}"][time="${startHr} ${startMeridiem}"]`);
-		let topOffset = startTd.position().top + (hourHeight * startMinProportion) + tableBorderSize;
-		let leftOffset = startTd.position().left;
+		let topOffset = startTd.position().top + (hourHeight * startMinProportion);
+		let leftOffset = startTd.offset().left;
 
 		// Calculating height
 		let msDuration =
@@ -135,13 +134,11 @@ function placeEvents() {
 		let hrDuration = msDuration / 1000 / 60 / 60;
 		let extraBorderHeightMultiplier = Math.floor(hrDuration);
 		if (Number.isInteger(hrDuration)) extraBorderHeightMultiplier -= 1;
-		let smartEventHeight = (hourHeight * hrDuration) + (extraBorderHeightMultiplier * tableBorderSize);
-		console.log(hrDuration);
+		let smartEventHeight = (hourHeight * hrDuration) + (extraBorderHeightMultiplier * tableBorderWidth);
 
 		$(this).css({
 			"top": topOffset,
 			"left": leftOffset,
-			"width": hourWidth,
 			"height": smartEventHeight
 		});
 	});
