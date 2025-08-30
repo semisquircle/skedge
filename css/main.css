@@ -18,6 +18,13 @@
 	--event-green:	#cae5d7;
 	--event-blue:	#c6dff3;
 	--event-purple: #dbcdf0;
+
+	--table-border-width: 1px;
+	--table-border-color: var(--ui-color5);
+	--table-num-hours: 10;
+	--table-hour-height: calc(
+		(100vh - ((var(--table-num-hours) + 2) * var(--table-border-width))) / (var(--table-num-hours) + 1)
+	);
 }
 
 html, body {
@@ -28,9 +35,6 @@ html, body {
 }
 
 body {
-	--table-border-width: 1px;
-	--table-hour-height: calc((100vh - 13 * var(--table-border-width)) / 12);
-	--table-border-color: var(--ui-color5);
 	position: relative;
 	display: flex;
 	flex-direction: column;
